@@ -13,6 +13,10 @@ public class MarkdownParse {
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
             int nextOpenBracket = markdown.indexOf("[", currentIndex);
+            if (nextOpenBracket == -1)
+            {
+                break;
+            }
             int testOpenBracket = markdown.indexOf("[");
             System.out.println(nextOpenBracket);
             System.out.println(testOpenBracket);
