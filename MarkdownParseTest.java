@@ -60,4 +60,15 @@ public class MarkdownParseTest {  // class header
 
         assertEquals(List.of(), links);
     }
+
+        // test2-file test
+        @Test
+        public void testFile5() throws IOException 
+        {
+            Path fileName = Path.of("test5-file.md");
+            String contents = Files.readString(fileName);
+            ArrayList<String> links = MarkdownParse.getLinks(contents);
+    
+            assertEquals(List.of("https://hello.com", "https://google.coml"), links);
+        }
 }
