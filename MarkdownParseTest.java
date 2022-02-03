@@ -69,6 +69,6 @@ public class MarkdownParseTest {  // class header
             String contents = Files.readString(fileName);
             ArrayList<String> links = MarkdownParse.getLinks(contents);
     
-            assertEquals(List.of("https://hello.com", "https://google.coml"), links);
+            assertEquals(List.of("https://hello.com", "https://google.com"), links);
         }
 }
