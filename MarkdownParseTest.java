@@ -40,7 +40,7 @@ public class MarkdownParseTest {  // class header
         String contents = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(contents);
 
-        assertEquals(List.of("https://duckduckgo.com", "https://kde.org"), links);
+        assertEquals(List.of("https://something.com", "some-page.html"), links);
     }
     
     @Test
