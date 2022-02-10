@@ -11,7 +11,7 @@ public class MarkdownParseTest {  // class header
     @Test  // telling us that function on next line is a test
     public void addition() {  // method header
         assertEquals(2, 1 + 1);  // checks if 2 is equal to 1+1
-        int one = 1;
+        int one = 1 + 1;
     }
 
     @Test
