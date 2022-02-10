@@ -30,6 +30,7 @@ public class MarkdownParse {
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
         }
+        int one = 1;
         return toReturn;
     }
     public static void main(String[] args) throws IOException {
