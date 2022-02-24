@@ -1,2 +1,1 @@
-[](a link on the first line)
-[
+[![image](image.jpg)
