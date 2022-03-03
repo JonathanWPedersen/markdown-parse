@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -37,6 +38,27 @@ public class MarkdownParse {
         int one = 1;
         return toReturn;
     }
+
+    public static Map<String, List<String>> getLinks(File dirOrFile) throws IOException {
+        Map<String, List<String>> result = new HashMap<>();
+        if(dirOrFile.isDirectory()) {
+            for(File f: dirOrFile.listFiles()) {
+                result.putAll(getLinks(f));
+            }
+            return result;
+        }
+        else {
+            Path p = dirOrFile.toPath();
+            int lastDot = p.toString().lastIndexOf(".");
+            if(lastDot == -1 || !p.toString().substring(lastDot).equals(".md")) {
+                return result;
+            }
+            ArrayList<String> links = getLinks(Files.readString(p));
+            result.put(dirOrFile.getPath(), links);
+            return result;
+        }
+    }
+
     public static void main(String[] args) throws IOException 
     {
         Map<String, List <String>> files = getLinks(new File(args[0]));
