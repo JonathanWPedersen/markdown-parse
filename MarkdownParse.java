@@ -1,7 +1,10 @@
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class MarkdownParse {
     public static ArrayList<String> getLinks(String markdown) {
@@ -34,10 +37,9 @@ public class MarkdownParse {
         int one = 1;
         return toReturn;
     }
-    public static void main(String[] args) throws IOException {
-	Path fileName = Path.of(args[0]);
-	String contents = Files.readString(fileName);
-        ArrayList<String> links = getLinks(contents);
-        System.out.println(links);
+    public static void main(String[] args) throws IOException 
+    {
+        Map<String, List <String>> files = getLinks(new File(args[0]));
+        System.out.println(files);
     }
 }
