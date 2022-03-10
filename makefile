@@ -8,4 +8,5 @@ MarkdownParse.class: MarkdownParse.java
 	javac MarkdownParse.java
 
 
-
+TryCommonMark.class: TryCommonMark.java
+	javac -g -cp $(CLASSPATH) TryCommonMark.java
