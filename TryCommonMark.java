@@ -14,13 +14,12 @@ class TryCommonMark
         WordCountVisitor visitor = new WordCountVisitor();
         node.accept(visitor);
         System.out.println(visitor.wordCount);  // 4
-        
-
     }
 
 }
 
-class WordCountVisitor extends AbstractVisitor {
+class WordCountVisitor extends AbstractVisitor 
+{
     int wordCount = 0;
 
     @Override
